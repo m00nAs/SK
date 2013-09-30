@@ -29,6 +29,8 @@ if f1*f2 > 0;
 error('Nurodytame intervale (x1,x2) nera funkcijos nulio')
 end
 
+
+% Atliekamas saktu patikrinimas ir priskirimas
 n = ceil(log2(abs(x2 - x1)/tol));
 for i = 1:n
     x3 = 0.5*(x1 + x2);
