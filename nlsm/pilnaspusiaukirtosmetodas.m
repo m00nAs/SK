@@ -20,6 +20,7 @@ while 1
         saknis = pusiaukirtosmetodas(func,x1,x2,0,tol);
         if ~isnan(saknis)
             saknusk = saknusk + 1;
+			if saknis < b
             saknys(saknusk) = saknis;
         end
     end
