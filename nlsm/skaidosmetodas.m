@@ -9,6 +9,7 @@ function [x1,x2] = skaidosmetodas(func,a,b,dx)
 % IÐVEDIMO PARAMETRAI:
 % x1,x2 = maþiausio funkcijos nulio ribos: intervalas (x1,x2), kuris yra poaibis (a,b);
 % priskiriame NaN jeigu nebuvo surastas toks intervalas
+if a > b; x1 = NaN; x2 = NaN; return; end
 x1 = a; f1 = func(x1);
 x2 = a + dx; f2 = func(x2);
 while f1*f2 > 0.0
