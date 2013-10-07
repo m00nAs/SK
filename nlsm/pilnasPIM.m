@@ -24,12 +24,12 @@ while 1
             saknys(saknusk) = saknys;
         end
     end
+    end
 end
-x=a_pradinis:.1:b;
-y = funkcija5(x);
-plot(x,y);
+x=a_pradinis:1:b
+y = func(x)
+plot(x,y)
 hold on;
-x_saknys = saknys;
-y_saknys = funkcija5(x_saknys);
+x_saknys = saknys
+y_saknys = func(x_saknys)
 scatter(x_saknys, y_saknys,'*r');
-end

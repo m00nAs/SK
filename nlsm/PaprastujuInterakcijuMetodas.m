@@ -1,4 +1,4 @@
-function saknys = PaprastujuInterakcijuMetodas(func, func_fi,x1,x2,tol, x0)
+function saknys = PaprastujuInterakcijuMetodas(func, func_fi, x1,x2,tol, x0)
 % Pusiaukirtos metodu surandami visi funkcijos f(x) nuliai intervale (a,b).
 % IVEDIMO PARAMETRAI:
 %func - funkcijos f(x) issireiksta: x = funkc_fi(x)   , kaip m-failas arba anonimine funkcija
