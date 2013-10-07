@@ -1,11 +1,11 @@
-function saknys = pilnaspusiaukirtosmetodas(func,a,b,dx,filter,tol)
+function saknys = pilnasPIM(func, func_fi,a,b,dx,tol)
 % Pusiaukirtos metodu surandami visi funkcijos f(x) nuliai intervale (a,b).
 % IVEDIMO PARAMETRAI:
 %func - funkcija, kaip m-failas arba anonimine funkcija
 % a,b = pirminio intervalo pradþia ir pabaiga.
 % dx = þingsnio ilgis: (b-a)/n.
 %a<b, intervalas, kuriame ieskosime funkcijos nulio(-iu)
-%PALEIDIMAS: saknys = pilnaspusiaukirtosmetodas(func,a,b,dx,filter,tol)
+%PALEIDIMAS: saknys = pilnasPIM(func,a,b,dx,filter,tol)
 saknusk = 0;
 a_pradinis = a;
 while 1
@@ -17,11 +17,11 @@ while 1
         break
     else
         a = x2;
-        saknis = pusiaukirtosmetodas(func,x1,x2,0,tol);
-        if ~isnan(saknis)
+        saknys = PaprastujuInterakcijuMetodas(func, func_fi,x1,x2,0.01)
+        if ~isnan(saknys)
             saknusk = saknusk + 1;
-			if saknis < b
-            saknys(saknusk) = saknis;
+			if saknys < b
+            saknys(saknusk) = saknys;
         end
     end
 end
@@ -32,3 +32,4 @@ hold on;
 x_saknys = saknys;
 y_saknys = funkcija5(x_saknys);
 scatter(x_saknys, y_saknys,'*r');
+end
