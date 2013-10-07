@@ -1,17 +1,16 @@
-function saknys = PaprastujuInterakcijuMetodas(func_fi,x1,x2,tol, x0)
+function saknys = PaprastujuInterakcijuMetodas(func, func_fi,x1,x2,tol, x0)
 % Pusiaukirtos metodu surandami visi funkcijos f(x) nuliai intervale (a,b).
 % IVEDIMO PARAMETRAI:
 %func - funkcijos f(x) issireiksta: x = funkc_fi(x)   , kaip m-failas arba anonimine funkcija
-% a,b = pirminio intervalo pradþia ir pabaiga.
+% x1,x2 = pirminio intervalo pradþia ir pabaiga.
 % dx = þingsnio ilgis: (b-a)/n.
 %a<b, intervalas, kuriame ieskosime funkcijos nulio(-iu)
 %PALEIDIMAS: saknys = PaprastujuInterakcijuMetodas(func,x1,x2,tol,x0)
 
+if nargin < 6; x0= x1 + (x2 - x1) * rand(1); end
+if nargin < 5; tol = 0.01; end
+if nargin < 4; error('Nemaziau negu 4 parametrai turi buti ivesti'); end
 x(1)=x0;
-if nargin < 5; x(1) = a + (b-a).*rand(1,1); end
-if nargin < 4; tol = 0.01; end
-if nargin <3; error('Nemaziau negu 3 parametrai turi buti ivesti');
-
 
 f1 = func(x1);
 if abs(f1) < 10^(-10); saknis = x1; return; end
@@ -32,4 +31,5 @@ while paklaida > tol
         disp(['konvergavimo salyga nepatenkinta per ',num2str(n),'interakciju']);
         break;
     end
+    saknys=x(n);
 end
