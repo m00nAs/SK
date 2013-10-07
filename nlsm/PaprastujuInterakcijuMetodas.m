@@ -21,9 +21,10 @@ error('Nurodytame intervale (x1,x2) nera funkcijos nulio')
 end
 
 s=x1:0.1:x2;
+y=func_fiisv(s);
+q=abs(max(y));
 
-
-q=0.5;
+if q < 1
 n=1;
 paklaida=abs(x2 - x1);
 while paklaida > tol
@@ -35,4 +36,5 @@ while paklaida > tol
         break;
     end
     saknys=x(n);
+end
 end
