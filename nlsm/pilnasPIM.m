@@ -1,4 +1,4 @@
-function saknys = pilnasPIM(func, func_fi,a,b,dx,tol)
+function saknys = pilnasPIM(func, func_fi,fucn_fiisv,a,b,dx,tol)
 % Pusiaukirtos metodu surandami visi funkcijos f(x) nuliai intervale (a,b).
 % IVEDIMO PARAMETRAI:
 %func - funkcija, kaip m-failas arba anonimine funkcija
@@ -17,7 +17,7 @@ while 1
         break
     else
         a = x2;
-        saknys = PaprastujuInterakcijuMetodas(func, func_fi,x1,x2,0.01)
+        saknys = PaprastujuInterakcijuMetodas(func, func_fi,func_fiisv,x1,x2,0.01)
         if ~isnan(saknys)
             saknusk = saknusk + 1;
 			if saknys < b

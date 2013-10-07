@@ -7,9 +7,9 @@ function saknys = PaprastujuInterakcijuMetodas(func, func_fi, func_fiisv, x1,x2,
 %a<b, intervalas, kuriame ieskosime funkcijos nulio(-iu)
 %PALEIDIMAS: saknys = PaprastujuInterakcijuMetodas(func,x1,x2,tol,x0)
 
-if nargin < 7; x0= x1 + (x2 - x1) * rand(1); end
-if nargin < 6; tol = 0.01; end
-if nargin < 5; error('Nemaziau negu 4 parametrai turi buti ivesti'); end
+if nargin < 8; x0= x1 + (x2 - x1) * rand(1); end
+if nargin < 7; tol = 0.01; end
+if nargin < 6; error('Nemaziau negu 4 parametrai turi buti ivesti'); end
 x(1)=x0;
 
 f1 = func(x1);
@@ -37,4 +37,7 @@ while paklaida > tol
     end
     saknys=x(n);
 end
+else
+  disp('q > 1');
+  saknys = NaN;
 end
