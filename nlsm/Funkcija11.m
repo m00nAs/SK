@@ -1,5 +1,5 @@
-function [ f9 ] =Funkcija9 (x1)
+function [ f11 ] =Funkcija11 (x1)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-f9=2.^(-x1)-x1;
+f11=log(x1)-(7/(2*(x1)+6));
 end

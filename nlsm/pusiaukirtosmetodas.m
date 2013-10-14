@@ -33,11 +33,8 @@ end
 
 
 % Atliekamas saktu patikrinimas ir priskirimas
-<<<<<<< HEAD
-=======
 % Ceil apvalina sveika skaciu i didesnio puse
 % n skaiciuoja kiek zinksniu bus vigdoma
->>>>>>> a3e7b7208b66a89f731984aafd9aa86f512ed13b
 n = ceil(log2(abs(x2 - x1)/tol));
 for i = 1:n
     %suranda nauja vidurio taska ir apskaiciuoja funkcijos reiksme
