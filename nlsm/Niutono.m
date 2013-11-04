@@ -8,13 +8,22 @@ function saknys = Niutono(func, func_isv, func_isv2, x1,x2,tol, x0)
 %PALEIDIMAS: saknys = PaprastujuInterakcijuMetodas(func,x1,x2,tol,x0)
 
 
-%ss=x1:0.1:x2;
-%y=func_isv(ss);
-%Ma=max(y);
-%if (and((ma <= y),(ma>=0)))
-%end
+ss=x1:0.1:x2;
+y=func_isv(ss);
+ma=max(y);
+if (and((ma <= y),(ma>=0)))
+    j=maxint;
+    s1=x1:0.1:x2;
+    y1=func_isv2(s1);
+    ma2=max(y1);
+    if (and((ma2 >= y1),(ma2<=j)))
+    else 
+     disp('konvergavimo salyga nepatenkinta ') 
+     return;
+    end    
+end
 
-a_pradinis = x1;
+%a_pradinis = x1;
 
 x(1)=x0;
 n=1;
@@ -33,11 +42,11 @@ end
 
 
 
-g=a_pradinis:.1:x2;
-y = func(g);
-plot(g,y);
-hold on;
-x_saknys = saknys;
-y_saknys = func(x_saknys);
-scatter(x_saknys, y_saknys,'*r');
+%g=a_pradinis:.1:x2;
+%y = func(g);
+%plot(g,y);
+%hold on;
+%x_saknys = saknys;
+%y_saknys = func(x_saknys);
+%scatter(x_saknys, y_saknys,'*r');
 end
