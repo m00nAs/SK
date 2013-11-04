@@ -7,6 +7,15 @@ function saknys = Niutono(func, func_isv, func_isv2, x1,x2,tol, x0)
 %a<b, intervalas, kuriame ieskosime funkcijos nulio(-iu)
 %PALEIDIMAS: saknys = PaprastujuInterakcijuMetodas(func,x1,x2,tol,x0)
 
+
+%ss=x1:0.1:x2;
+%y=func_isv(ss);
+%Ma=max(y);
+%if (and((ma <= y),(ma>=0)))
+%end
+
+a_pradinis = x1;
+
 x(1)=x0;
 n=1;
 paklaida=1;
@@ -21,4 +30,14 @@ while paklaida > tol
     end
     saknys=x(n);
 end
+
+
+
+g=a_pradinis:.1:x2;
+y = func(g);
+plot(g,y);
+hold on;
+x_saknys = saknys;
+y_saknys = func(x_saknys);
+scatter(x_saknys, y_saknys,'*r');
 end
